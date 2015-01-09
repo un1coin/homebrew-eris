@@ -2,7 +2,7 @@
 # @Author: caktux
 # @Date:   2015-01-08 23:31:33
 # @Last Modified by:   caktux
-# @Last Modified time: 2015-01-09 00:46:09
+# @Last Modified time: 2015-01-09 00:50:44
 
 require 'formula'
 
@@ -15,6 +15,7 @@ class Decerver < Formula
 
   depends_on 'go' => :build
   depends_on 'hg' => :build
+  depends_on 'gmp'
   depends_on 'ipfs'
   depends_on 'epm'
   depends_on 'thelonius'
