@@ -4,7 +4,7 @@ Homebrew Tap for Eris Industries
 ## Installation
 
 ```
-brew tap caktux/eris
+brew tap eris-ltd/eris
 brew install decerver
 ```
 
