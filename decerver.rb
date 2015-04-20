@@ -2,7 +2,7 @@
 # @Author: caktux
 # @Date:   2015-01-08 23:31:33
 # @Last Modified by:   caktux
-# @Last Modified time: 2015-04-20 00:51:07
+# @Last Modified time: 2015-04-20 01:08:24
 
 require 'formula'
 
@@ -16,9 +16,9 @@ class Decerver < Formula
   depends_on 'go' => :build
   depends_on 'hg' => :build
   depends_on 'gmp'
-  depends_on 'ipfs.rb'
-  depends_on 'epm.rb'
-  depends_on 'thelonious.rb'
+  depends_on 'ipfs'
+  depends_on 'epm'
+  depends_on 'thelonious'
 
   def install
     ENV["GOPATH"] = "#{HOMEBREW_PREFIX}/opt/ipfs:#{HOMEBREW_PREFIX}/opt/epm:#{HOMEBREW_PREFIX}/opt/thelonious:#{buildpath}"
