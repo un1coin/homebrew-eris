@@ -2,13 +2,13 @@
 # @Author: caktux
 # @Date:   2015-01-09 00:17:58
 # @Last Modified by:   caktux
-# @Last Modified time: 2015-01-09 00:45:47
+# @Last Modified time: 2015-04-20 00:43:13
 
 require 'formula'
 
 class Epm < Formula
 
-  version '0.1'
+  version '0.8.3'
 
   homepage 'https://github.com/eris-ltd/epm-go'
   url 'https://github.com/eris-ltd/epm-go.git', :branch => 'master'
@@ -17,7 +17,7 @@ class Epm < Formula
   depends_on 'hg' => :build
 
   def install
-    ENV["GOPATH"] = "#{buildpath}"
+    ENV["GOPATH"] = "#{buildpath}/Godeps/_workspace:#{buildpath}"
     ENV["GOROOT"] = "#{HOMEBREW_PREFIX}/opt/go/libexec"
 
     # Debug env
@@ -32,7 +32,7 @@ class Epm < Formula
     cmd = "#{base}/cmd/"
 
     # Get dependencies
-    system "go", "get", "-v", "-t", "-d", "./#{cmd}epm"
+    # system "go", "get", "-v", "-t", "-d", "./#{cmd}epm"
 
     system "go", "install", "-v", "./#{cmd}epm"
 

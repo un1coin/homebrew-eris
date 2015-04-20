@@ -2,13 +2,13 @@
 # @Author: caktux
 # @Date:   2015-01-09 00:09:40
 # @Last Modified by:   caktux
-# @Last Modified time: 2015-01-09 00:45:43
+# @Last Modified time: 2015-04-20 00:43:11
 
 require 'formula'
 
 class Ipfs < Formula
 
-  version '0.1'
+  version '0.1.7'
 
   homepage 'https://github.com/eris-ltd/go-ipfs'
   url 'https://github.com/eris-ltd/go-ipfs.git', :branch => 'master'
@@ -17,7 +17,7 @@ class Ipfs < Formula
   depends_on 'hg' => :build
 
   def install
-    ENV["GOPATH"] = "#{buildpath}"
+    ENV["GOPATH"] = "#{buildpath}/Godeps/_workspace:#{buildpath}"
     ENV["GOROOT"] = "#{HOMEBREW_PREFIX}/opt/go/libexec"
 
     # Debug env
@@ -32,7 +32,7 @@ class Ipfs < Formula
     cmd = "#{base}/cmd/"
 
     # Get dependencies
-    system "go", "get", "-v", "-t", "-d", "./#{cmd}ipfs"
+    # system "go", "get", "-v", "-t", "-d", "./#{cmd}ipfs"
 
     system "go", "install", "-v", "./#{cmd}ipfs"
 
