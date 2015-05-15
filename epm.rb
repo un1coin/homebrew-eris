@@ -15,6 +15,7 @@ class Epm < Formula
 
   depends_on 'go' => :build
   depends_on 'hg' => :build
+  depends_on 'gmp'
 
   def install
     ENV["GOPATH"] = "#{buildpath}/Godeps/_workspace:#{buildpath}"
